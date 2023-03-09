@@ -12,12 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text= "Ubah Destinasi"
+        android:textColor="#171616"
         android:textSize="21sp"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="32dp"
-        />
+        android:layout_marginBottom="32dp" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -27,8 +28,7 @@
             android:layout_height="wrap_content"
             android:hint="Nama Destinasi"
             android:background="@color/white"
-            android:inputType="text"
-            />
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -39,13 +39,13 @@
             android:layout_height="wrap_content"
             android:hint="Alamat"
             android:background="@color/white"
-            android:inputType="number"
+            android:inputType="text"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        13
+
         <EditText
             android:id="@+id/et_jam"
             android:layout_width="match_parent"
@@ -60,5 +60,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Ubah"/>
+        android:text="Ubah"
+        android:textStyle="bold"/>
 </LinearLayout>
