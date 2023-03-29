@@ -2,6 +2,7 @@ package com.si61.payo_bejalan;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -52,6 +53,16 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
         long eksekusi = db.insert(TABLE_NAME,null,cv);
         return eksekusi;
+    }
+
+    public Cursor bacaDataDestinasi(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " +TABLE_NAME;
+        Cursor varCursor = null;
+        if(db!=null){
+            varCursor = db.rawQuery(query,null);
+        }
+        return varCursor;
     }
 
 }
