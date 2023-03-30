@@ -26,7 +26,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_NAME + "(" +
-                FIELD_ID+"INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                FIELD_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 FIELD_NAMA+" VARCHAR(50), " +
                 FIELD_ALAMAT+" TEXT, " +
                 FIELD_JAM+" VARCHAR(30)" +
@@ -63,6 +63,26 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             varCursor = db.rawQuery(query,null);
         }
         return varCursor;
+    }
+
+    public long ubahData(String Id, String nama, String alamat,String jam){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(FIELD_NAMA, nama);
+        cv.put(FIELD_ALAMAT, alamat);
+        cv.put(FIELD_JAM, jam);
+
+        long eksekusi = db.update(TABLE_NAME, cv, "id = ?", new String[]{Id});
+        return eksekusi;
+    }
+
+    public long hapusData(String Id){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+
+        long eksekusi = db.delete(TABLE_NAME, "id = ?", new String[]{Id});
+        return eksekusi;
     }
 
 }
